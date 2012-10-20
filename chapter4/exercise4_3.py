@@ -11,7 +11,7 @@ def square(t,length):
         fd(t,length)
         lt(t)
 
-def polygon(t,n,length):
+def polygonOrig(t,n,length):
     angle = 360.0/n
     for i in range(n):
         fd(t,length)
@@ -31,13 +31,18 @@ def arc(t,r,angle):
     n = int(arcLength/3)+1
     step_angle =float(angle)/n
     arc_length =  arcLength/n
-    
-    for i in range(n):
-        fd(t,arc_length)
-        lt(t,step_angle)
+    polyline(t, n, arc_length, step_angle)
 
 def CircleArc(t,r):
-    arc(t, r, 360)
+    arc(t, r, 360.0)
+    
+def polyline(t,n,length,angle):
+    for i in range(n):
+        fd(t,length)
+        lt(t,angle)
+def polygon(t,n,length):
+    angle = 360.0/n
+    polyline(t, n, length, angle)
 
     
     
@@ -51,6 +56,10 @@ def CircleArc(t,r):
 
 #arc(bob,55,180)
 
-CircleArc(bob,56)
+#CircleArc(bob,56)
+
+#arc(bob, 100, 45)
+#lt(bob,130)
+#arc(bob,100,45)
 
 wait_for_user()
