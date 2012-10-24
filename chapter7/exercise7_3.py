@@ -1,9 +1,9 @@
 import math
 
 def square_root(a):
-    x = (a+1)/3+1
+    x = 1
     while True:
-        y=float(x+(a/2.0))/2.0
+        y=float(x+(a/x))/2.0
         if abs(y-x)<0.000000001:
             break
         x=y
@@ -18,7 +18,7 @@ def test_square_root():
     while n<10:
         a = square_root(n)
         b = math.sqrt(n)
-        print n," ",a,"    ",b,"    ",abs(a-b)
+        print n,"  ",repr(a)," "*(30-len(repr(a))),repr(b)," "*(30-len(repr(b))),abs(a-b)
         n=n+1
 
 test_square_root()

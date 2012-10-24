@@ -1,14 +1,15 @@
 import math
+from Foundation import ABS
 
 def square_root(a):
-    x = (a+1)/3+1
+    x = 1
     while True:
         print "x= ",float(x)
-        y=float(x+(a/2.0))/2.0
+        y=float(x+(a/x))/2.0
         print "y = ",y
-        if abs(y-x)<0.0000001:
+        if abs(y-x)<0.000001:
             break
         x = y
 
 
-square_root(4)
+square_root(9)
