@@ -10,7 +10,7 @@ def middle(word):
 
 
 def is_palindrome(word):
-    if len(word)<=0:
+    if len(word)<=1:
         return True
     if first(word)!=last(word):
         return False
