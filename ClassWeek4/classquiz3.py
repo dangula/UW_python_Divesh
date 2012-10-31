@@ -1,0 +1,11 @@
+#c = file("test.dat")
+f=file("test.dat","r+")
+f.seek(20)
+f.write("testing".ljust(20))
+f.write("Eric".ljust(20))
+f.seek(120)
+f.write("Sam".ljust(20))
+f.seek(40)
+s=f.read(20)
+print s
+f.close()
