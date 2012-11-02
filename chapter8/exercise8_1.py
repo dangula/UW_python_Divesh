@@ -1,5 +1,8 @@
-
 def printStringReverse(str):
+    """
+    This function takes a string and prints it in reverse order,
+    one per line
+    """
     length = len(str)
     index =-1
     for i in range(length):
