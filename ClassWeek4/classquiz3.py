@@ -1,5 +1,5 @@
 #c = file("test.dat")
-f=file("test.dat","r+")
+f=file("test.dat","a+")
 f.seek(20)
 f.write("testing".ljust(20))
 f.write("Eric".ljust(20))
