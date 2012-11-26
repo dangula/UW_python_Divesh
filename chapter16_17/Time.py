@@ -26,9 +26,15 @@ class Time(object):
         self.hour +=addHr
         
         self.hour = self.hour%24
+    def time_to_int(self):
+        """Exercise 17_1 """
+        minutes = self.hour * 60 + self.min
+        seconds = minutes * 60 + self.sec
+        return seconds 
+    
     
   
-def time_to_int(time):
+def time_to_int_Pure(time):
     minutes = time.hour * 60 + time.min
     seconds = minutes * 60 + time.sec
     return seconds        
@@ -68,17 +74,17 @@ def increment_pure(t1,seconds):
 
 def increment_short(t,seconds):
     """ Exercise 5"""
-    t_inSec = time_to_int(t)
+    t_inSec = time_to_int_Pure(t)
     t_inSec +=seconds
     return int_to_time(t_inSec)
 def mul_time(t,num):
     """Exercise 6_1"""
-    t_inSec = time_to_int(t)
+    t_inSec = time_to_int_Pure(t)
     prod = t_inSec*num
     return int_to_time(prod)
 
 def avgSpeed(t,d):
-    t_sec = time_to_int(t)
+    t_sec = time_to_int_Pure(t)
     speed_inSec = t_sec/d
     return int_to_time(speed_inSec)
     
